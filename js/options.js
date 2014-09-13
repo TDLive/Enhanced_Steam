@@ -134,6 +134,7 @@ function save_options() {
 	profile_wastedonsteam = $("#profile_wastedonsteam").prop('checked');
 	profile_astats = $("#profile_astats").prop('checked');
 	profile_backpacktf = $("#profile_backpacktf").prop('checked');
+	profile_csgolounge = $("#profile_csgolounge").prop('checked');
 	profile_astatsnl = $("#profile_astatsnl").prop('checked');
 	profile_api_info = $("#profile_api_info").prop('checked');
 	api_key = $("#api_key").val();
@@ -226,6 +227,7 @@ function save_options() {
 		'profile_steamdbcalc': profile_steamdbcalc,
 		'profile_astats': profile_astats,
 		'profile_backpacktf': profile_backpacktf,
+		'profile_csgolounge': profile_csgolounge,
 		'profile_astatsnl': profile_astatsnl,
 		'profile_api_info': profile_api_info,
 		'api_key': api_key,
@@ -453,6 +455,7 @@ function load_options() {
 		if (settings.profile_steamdbcalc === undefined) { settings.profile_steamdbcalc = true; chrome.storage.sync.set({'profile_steamdbcalc': settings.profile_steamdbcalc}); }
 		if (settings.profile_astats === undefined) { settings.profile_astats = true; chrome.storage.sync.set({'profile_astats': settings.profile_astats}); }
 		if (settings.profile_backpacktf === undefined) { settings.profile_backpacktf = true; chrome.storage.sync.set({'profile_backpacktf': settings.profile_backpacktf}); }
+		if (settings.profile_csgolounge === undefined) { settings.profile_csgolounge = false; chrome.storage.sync.set({'profile_csgolounge': settings.profile_csgolounge}); }
 		if (settings.profile_astatsnl === undefined) { settings.profile_astatsnl = true; chrome.storage.sync.set({'profile_astatsnl': settings.profile_astatsnl}); }
 		if (settings.profile_api_info === undefined) { settings.profile_api_info = false; chrome.storage.sync.set({'profile_api_info': settings.profile_api_info}); }
 		if (settings.api_key == false||settings.api_key==""||settings.api_key===undefined){ settings.profile_api_info = false; chrome.storage.sync.set({'profile_api_info': settings.profile_api_info});}
@@ -552,6 +555,7 @@ function load_options() {
 		$("#profile_wastedonsteam").prop('checked', settings.profile_wastedonsteam);
 		$("#profile_astats").prop('checked', settings.profile_astats);
 		$("#profile_backpacktf").prop('checked', settings.profile_backpacktf);
+		$("#profile_csgolounge").prop('checked', settings.profile_csgolounge);
 		$("#profile_astatsnl").prop('checked', settings.profile_astatsnl);
 		$("#profile_api_info").prop('checked', settings.profile_api_info);
 		if(!settings.profile_api_info){$("#api_key_block").hide()}
